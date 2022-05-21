@@ -1,6 +1,8 @@
 
 # echogorm1
 
+This is example of [how to structure your golang project](https://kokizzu.blogspot.com/2022/05/how-to-structure-layer-your-golang-project.html) article with echo and gorm (you can change it to whatever framework and persistence libraries you like, the structure should still be similar).
+
 ```
 # MVC
 presentation -call-> business -call-> model
