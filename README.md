@@ -10,23 +10,34 @@ presentation -call-> business -call-> model
 # Clean
 presentation -call-> business
 model -injected-to-> business
+
+presentation should only care about transport and serialization/deserialization
+model should only care about DAO and persistence (can be decoupled)
+business should only care about business logic
+
+presentation can access business
+business can access model
+
+model should not ever depend on business
+business should not ever depend on presentation
 ```
 
 ## How to start
 
 ```shell
+make setup
 
 docker-compose up
 
 mysql -u root -p -h 127.0.0.01 -P 3306
 CREATE DATABASE test1;
 
+air
 ```
 
 ## Manual test example
 
 ```shell
-
 curl -X POST -d 'email=test&password=pass' http://localhost:1323/guest/login
 
 curl -X POST -H 'content-type: application/json' -d '{"email":"test","password":"pass"}' http://localhost:1323/guest/login
