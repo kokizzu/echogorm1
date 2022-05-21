@@ -10,7 +10,7 @@ presentation -call-> business
 model -injected-to-> business
 ```
 
-## How to stasrt
+## How to start
 
 ```shell
 
@@ -29,6 +29,11 @@ curl -X POST -d 'email=test&password=pass' http://localhost:1323/guest/login
 
 curl -X POST -H 'content-type: application/json' -d '{"email":"test","password":"pass"}' http://localhost:1323/guest/login
 
-
 curl -X POST -d 'email=test&password=pass' http://localhost:1323/guest/register
 ```
+
+## TODO
+- censor logs
+- add metrics
+- golangci lint
+- godotenv to load config from env
